@@ -1,0 +1,9 @@
+[Unit]
+Description=Make function keys normal (non-Mac)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c "echo 2 > /sys/module/hid_apple/parameters/fnmode"
+
+[Install]
+WantedBy=multi-user.target

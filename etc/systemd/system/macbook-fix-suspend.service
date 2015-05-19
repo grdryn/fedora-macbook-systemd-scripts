@@ -1,0 +1,9 @@
+[Unit]
+Description=Fix suspend from reawakening immediately
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c "echo XHC1 > /proc/acpi/wakeup && echo LID0 > /proc/acpi/wakeup"
+
+[Install]
+WantedBy=multi-user.target

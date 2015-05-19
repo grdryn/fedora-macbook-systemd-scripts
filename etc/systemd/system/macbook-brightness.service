@@ -1,0 +1,9 @@
+[Unit]
+Description=Enable brightness buttons on Macbook Pro
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
+
+[Install]
+WantedBy=multi-user.target
