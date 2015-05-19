@@ -1,0 +1,21 @@
+# fedora-macbook-systemd-scripts
+
+# What
+
+Systemd startup files to make Fedora sane on my MacBook Pro.
+
+* Make the brightness keyboard shortcuts work
+* Make Fn key behaviour normal (non-OSX behaviour)
+* Fix tilde mapping on MBP keyboard
+* Prevent reawakening immediately after suspend
+** This last one may need to be adjusted for different hardware models or OS
+   configurations.
+
+# How
+
+The files here in `etc/systemd/system` need to be put into `/etc/systemd/system`,
+then started (for the current session) and enabled (to happen on startup).
+For example:
+
+    sudo systemctl start macbook-brightness.service
+    sudo systemctl enable macbook-brightness.service
